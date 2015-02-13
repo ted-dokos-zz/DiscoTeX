@@ -1,0 +1,17 @@
+{
+  "dokos-pak": {
+    "type": "article",
+    "title": "The Expected Shape of Doubly Alternating Baxter Permutations",
+    "authors": ["Theodore Dokos", "Igor Pak"],
+    "journal": "OJAC",
+    "tag": "DP"
+  },
+  "wiki-reftooltip": {
+    "type": "website",
+    "siteName": "MediaWiki",
+    "title": "Reference Tooltips",
+    "link": "http://www.mediawiki.org/wiki/Reference_Tooltips",
+    "retrieved": "2015-02-12",
+    "tag": "MW"
+  }
+}
