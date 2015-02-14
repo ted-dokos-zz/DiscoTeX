@@ -171,5 +171,10 @@
       </dt-bibliography>
 
     </div>
+    
+    <!-- Have MathJax check every second if there's stuff to render -->
+    <script type="text/x-mathjax-config">
+      setInterval(function(){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);},1000);
+    </script>
   </body>
 </html>
