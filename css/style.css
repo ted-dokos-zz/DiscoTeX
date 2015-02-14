@@ -37,6 +37,7 @@ ul.bibliography {
 }
 .cite-tooltip {
   position: absolute;
+  left:0px;
   border-style: solid;
   border-width: 4px;
   border-radius: 4px;
