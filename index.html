@@ -34,7 +34,7 @@
     <div class="col-md-6" role="main">
       <h1>DiscoTeX Demo</h1>
 
-      <dt-section section-title="Introduction"></dt-section>
+      <dt-section number="1" section-title="Introduction"></dt-section>
 
       <p>
       Mathematicians and other technical scientists
@@ -68,7 +68,7 @@
       Still, you might find the philosophy interesting.
       </p>
 
-      <dt-section section-title="Readability"></dt-section>
+      <dt-section number="2" section-title="Readability"></dt-section>
 
       <p>
       One of the priorities of DiscoTeX
@@ -81,21 +81,27 @@
       (ctrl+u on most browsers).
       </p>
 
-      <dt-section section-title="Equations and eqrefs">
+      <dt-section number="3" section-title="Equations and eqrefs">
       </dt-section>
 
       <p>
       Equations are currently rendered using MathJax:
-      <dt-equation
-         label="eq:euler" tag="\heartsuit">
+      <dt-equation label="eq:euler" tag="\heartsuit">
         e^{i\pi} = -1.
       </dt-equation>
+      The <code>dt-equation</code> tag
+      can be used with label and tag attributes, or not.
+      At the current moment,
+      a labeled equation must have a tag as well
+      to work properly with references.
+      </p>
+      <p>
       Equations can be referenced with the <code>dt-eqref</code> tag:
       <dt-eqref label="eq:euler"></dt-eqref>.
       Try clicking on the reference to see the magic.
       </p>
 
-      <dt-section section-title="Bibliography and citations"></dt-section>
+      <dt-section number="4" section-title="Bibliography and citations"></dt-section>
 
       <p>
       Currently bibliography items are stored in a JSON database.
@@ -108,7 +114,7 @@
       For more information, refer to
       <dt-cite label="wiki-reftooltip"></dt-cite>.
 
-      <dt-section section-title="Theorem-like environments"></dt-section>
+      <dt-section number="5" section-title="Theorem-like environments"></dt-section>
 
       <p>
       DiscoTeX allows for theorem panels via the
@@ -121,8 +127,7 @@
         <dt-eqref label="eq:euler"></dt-eqref>
         et fundamental theorem of calculus:
 
-        <dt-equation
-           label="" tag="">
+        <dt-equation>
           \int_a^b F'(t)dt = F(b)-F(a).
         </dt-equation>
 
@@ -135,7 +140,7 @@
         adipiscing
       </dt-theoremlike>
 
-      <dt-section section-title="Collapsible proofs"></dt-section>
+      <dt-section number="6" section-title="Collapsible proofs"></dt-section>
 
       <p>
       Proofs can be written in the <code>dt-proof</code> tag.

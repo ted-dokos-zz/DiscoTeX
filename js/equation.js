@@ -21,17 +21,24 @@
         tag: '@',
       },
       transclude: true,
-      templateUrl: 'templates/eqnElement.html',
+      //templateUrl: 'templates/eqnElement.html',
       link: function(scope, elem, attrs, controller, transcludeFn) {
         transcludeFn(scope,function(clone){
           scope.body = clone.text().trim();
-          var label = elem.attr("label");
-          scope.useLabel = !(label === "");
-          var tag = elem.attr("tag");
-          scope.useTag = !(tag === "");
-          if (scope.useLabel) {
-            equationDatabase.addEqn(label,tag,scope.body);
+          var content = '';
+          if (attrs.hasOwnProperty('label')) {
+            equationDatabase.addEqn(scope.label,
+                                    scope.tag,
+                                    scope.body);
+            content += '\\label{'+scope.label+'}\n';
           }
+          content += scope.body+'\n';
+          if (attrs.hasOwnProperty('tag')) {
+            content += '\\tag{\\('+scope.tag+'\\)}';
+          }
+          elem.html('<script type="math/tex; mode=display">'+
+                    content+
+                    '</script>');
         });
       },
     };
