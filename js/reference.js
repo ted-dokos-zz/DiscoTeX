@@ -41,8 +41,10 @@
       templateUrl: 'templates/refElement.html',
       controller: 'RefCtrl',
       link: function(scope, elem, attrs, controller){
+        scope.$watch('equations', fn(){
           scope.tag = scope.equations[scope.label].tag;
           scope.body = scope.equations[scope.label].body;
+        });
       },
     }
   });
