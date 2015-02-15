@@ -22,8 +22,9 @@
       },
       transclude: true,
       templateUrl: 'templates/thmElement.html',
-      link: function(scope){
+      link: function(scope,elem,attrs){
         scope.typeDict = theoremTypes;
+        scope.useName = attrs.hasOwnProperty('name');
       },
     };
   }]);

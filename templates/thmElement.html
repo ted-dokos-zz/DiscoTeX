@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">
       <strong>
-        {{ typeDict[type] }} {{ number }}{{ (name !== "") && (" ("+name+")") || "" }}
+        {{ typeDict[type] }} {{ number }}{{ useName && (" ("+name+")") || "" }}
       </strong>
     </h3>
   </div>
