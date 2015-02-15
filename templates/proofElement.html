@@ -1,4 +1,4 @@
-<accordion>
+<accordion ng-if="collapsible">
   <accordion-group is-open="isOpen">
     <accordion-heading>
       <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}"></i>
@@ -14,3 +14,14 @@
     </span>
   </accordion-group>
 </accordion>
+<div class="panel panel-default" ng-if="!collapsible">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <strong>
+        {{ useName && (name) || "Proof." }}
+      </strong>
+    </h3>
+  </div>
+  <div class="panel-body" ng-transclude>
+  </div>
+</div>
