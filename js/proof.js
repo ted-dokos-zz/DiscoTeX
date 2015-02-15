@@ -1,5 +1,16 @@
 (function(){
-  var app = angular.module('proof-directive',[]);
+  var app = angular.module('proof-directive',['ui.bootstrap.accordion']);
+
+  app.config(['$provide', Decorate]);
+
+  function Decorate($provide){
+    $provide.decorator('accordionGroupDirective', function($delegate){
+      var directive = $delegate[0];
+      directive.templateUrl = 'templates/proofAccordionOverride.html';
+
+      return $delegate;
+    });
+  }
 
   app.directive('dtProof', function(){
     return {
