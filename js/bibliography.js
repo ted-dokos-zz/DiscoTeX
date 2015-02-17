@@ -39,7 +39,7 @@
       scope: {
         label: '@',
       },
-      template: '<li id="{{ label }}"><dt-bibitemhelper label="{{ label }}" bd="bd" ng-controller="BibliographyCtrl"></dt-bibitemhelper></li>',
+      template: '<li id="{{ label }}" ng-controller="BibliographyCtrl"><dt-bibitemhelper label="{{ label }}" bd="bd"></dt-bibitemhelper></li>',
     };
   });
 
@@ -50,8 +50,16 @@
         label: '@',
         bd: '=',
       },
-      templateUrl: 'templates/bibItemElement.html',
-      //link: function(scope,elem,attr){},
+      template: '<span ng-include="templateUrl">Bib content not yet loaded.</span>',
+      link: function(scope,elem,attr){
+        scope.$watch('bd', function(){
+          scope.item = scope.bd[scope.label];
+          if (scope.item !== undefined) {
+            var url = 'templates/bib-templates/'+scope.item.type+'.html';
+            scope.templateUrl = url;
+          }
+        });
+      },
     };
   });
 
